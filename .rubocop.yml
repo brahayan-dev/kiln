@@ -1,2 +1,9 @@
 Style/FrozenStringLiteralComment:
   Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: true
+  AllowMultipleConditions: false
+
+Style/NestedModifier:
+  Enabled: true
