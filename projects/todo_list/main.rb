@@ -9,6 +9,7 @@ $options = <<~TEXT
   1. View tasks.
   2. Create a task.
   3. Remove a task.
+  4. Exit CLI.
   ==========================================================
 TEXT
 
@@ -24,6 +25,13 @@ def remove_task
   index = gets.chomp.to_i
 
   $tasks.delete_at(index)
+
+  # NOTE: Handle exception is not needed!
+  # begin
+  #   $tasks.delete_at(index)
+  # rescue StandardError => e
+  #   puts "#{e.class} - #{e.message}"
+  # end
 end
 
 def view_tasks
@@ -39,6 +47,9 @@ def select_flow(option)
     create_task
   when 3
     remove_task
+  when 4
+    puts 'Exiting.'
+    exit
   else
     puts 'Invalid option.'
   end
