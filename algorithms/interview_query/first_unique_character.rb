@@ -1,9 +1,6 @@
-word_1 = "concussion"
-word_2 = "helloworld"
+# frozen_string_literal: true
 
-def to_string(characters)
-  characters.map(&:to_s)
-end
+word = 'concussion'
 
 def to_schema(index, character)
   { index: index, character: character }
@@ -32,7 +29,6 @@ end
 def first_unique_character(word)
   word
     .chars
-    .then { |chars| to_string(chars) }
     .then { |str_chars| create_schema(str_chars) }
     .then { |schemas| count_characters(schemas) }
     .then { |grouped| filter_by_lower_frequency(grouped) }
@@ -40,4 +36,4 @@ def first_unique_character(word)
     .then { |sorted| get_index([sorted.first]) }
 end
 
-puts first_unique_character(word_1) 
+puts first_unique_character(word)
