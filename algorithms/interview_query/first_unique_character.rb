@@ -2,12 +2,8 @@
 
 word = 'concussion'
 
-def to_schema(index, character)
-  { index: index, character: character }
-end
-
 def create_schemas(characters)
-  characters.map.with_index { |char, index| to_schema(index, char) }
+  characters.map.with_index { |character, index| { index: index, character: character } }
 end
 
 def count_characters(schemas)
@@ -19,21 +15,21 @@ def filter_by_lower_frequency(grouped_schemas)
 end
 
 def sort_by_index(schemas)
-  schemas.sort_by { |schema| schema[:index] }
+  schemas.flatten.sort_by { |schema| schema[:index] }
 end
 
 def get_index(first_schema)
-  first_schema[0][:index]
+  first_schema.first[:index]
 end
 
 def first_unique_character(word)
   word
     .chars
-    .then { |str_chars| create_schemas(str_chars) }
+    .then { |characters| create_schemas(characters) }
     .then { |schemas| count_characters(schemas) }
-    .then { |grouped| filter_by_lower_frequency(grouped) }
-    .then { |filtered| sort_by_index(filtered.flatten) }
-    .then { |sorted| get_index([sorted.first]) }
+    .then { |grouped_schemas| filter_by_lower_frequency(grouped_schemas) }
+    .then { |filtered_schemas| sort_by_index(filtered_schemas) }
+    .then { |sorted_schemas| get_index(sorted_schemas) }
 end
 
 puts first_unique_character(word)
