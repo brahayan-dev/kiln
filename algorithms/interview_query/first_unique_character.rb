@@ -14,12 +14,12 @@ def filter_by_lower_frequency(grouped_schemas)
   grouped_schemas.values.filter { |group| group.length == 1 }
 end
 
-def sort_by_index(schemas)
-  schemas.flatten.sort_by { |schema| schema[:index] }
+def sort_by_index(filtered_schemas)
+  filtered_schemas.flatten.sort_by { |schema| schema[:index] }
 end
 
-def get_index(first_schema)
-  first_schema.first[:index]
+def get_index(sorted_schemas)
+  sorted_schemas.first[:index]
 end
 
 def first_unique_character(word)
