@@ -6,7 +6,7 @@ def to_schema(index, character)
   { index: index, character: character }
 end
 
-def create_schema(characters)
+def create_schemas(characters)
   characters.map.with_index { |char, index| to_schema(index, char) }
 end
 
@@ -29,7 +29,7 @@ end
 def first_unique_character(word)
   word
     .chars
-    .then { |str_chars| create_schema(str_chars) }
+    .then { |str_chars| create_schemas(str_chars) }
     .then { |schemas| count_characters(schemas) }
     .then { |grouped| filter_by_lower_frequency(grouped) }
     .then { |filtered| sort_by_index(filtered.flatten) }
