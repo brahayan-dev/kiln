@@ -30,3 +30,9 @@ build-iPhoneSimulator/
 /vendor/bundle
 /lib/bundler/man/
 .rvmrc
+
+# Guile
+*.go
+*.so
+*.dylib
+.cache/
