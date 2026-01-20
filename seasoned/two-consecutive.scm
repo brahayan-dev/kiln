@@ -25,3 +25,15 @@
 (two-in-a-row? '(a b c d)) ;; => #f
 (two-in-a-row? '(a b a d)) ;; => #f
 (two-in-a-row? '(b a a d)) ;; => #t
+
+(define (two-in-a-row-tail-rec? coll)
+  (cond
+   [(null? coll) #f]
+   [(null? (cdr coll)) #f]
+   [(eq? (car coll) (cadr coll)) #t]
+   [else (two-in-a-row-tail-rec? (cdr coll))]))
+
+
+(two-in-a-row-tail-rec? '(a b c d)) ;; => #f
+(two-in-a-row-tail-rec? '(a b a d)) ;; => #f
+(two-in-a-row-tail-rec? '(b a a d)) ;; => #t
