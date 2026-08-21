@@ -14,8 +14,6 @@ sbt test
 
 ## Layout
 
-Packages are singular, full-word, no `org.` prefix. One public type per file.
-
 ```
 src/main/scala/kiln/
 ├── list/      stack/    queue/    tree/
