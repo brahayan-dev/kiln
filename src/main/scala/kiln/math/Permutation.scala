@@ -3,7 +3,7 @@ package kiln.math
 import scala.collection.mutable.ArrayBuffer
 
 case class Permutation(n: BigInt):
-  require(n > 0, "`n` should be a positive integer")
+  require(n >= 0, "`n` should be a positive integer")
 
   private val cache = ArrayBuffer.empty[BigInt]
 
@@ -11,4 +11,4 @@ case class Permutation(n: BigInt):
     if n == 0 then acc else extend(n - 1, acc * n)
 
   def count: BigInt =
-    if n == 0 then 0 else extend(n, 1)
+    if n == 0 then 1 else extend(n, 1)

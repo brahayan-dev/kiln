@@ -5,9 +5,9 @@ class PermutationSuite extends munit.FunSuite:
     intercept[IllegalArgumentException]:
       Permutation(-1)
 
-  test("given n = 0, count returns 0"):
+  test("given n = 0, count returns 1"):
     val s = Permutation(0)
-    val expected: BigInt = 0
+    val expected: BigInt = 1
     assertEquals(s.count, expected)
 
   test("given n = 3, count answers the amount of permutations (6)"):
