@@ -7,8 +7,8 @@ case class Permutation(n: BigInt):
 
   private val cache = ArrayBuffer.empty[BigInt]
 
-  private def extend(n: BigInt, acc: BigInt) =
-    if n = 0 then acc else extend(n - 1, acc * n)
+  private def extend(n: BigInt, acc: BigInt): BigInt =
+    if n == 0 then acc else extend(n - 1, acc * n)
 
   def count: BigInt =
-    if n = 0 then 0 else extend(n, 1)
+    if n == 0 then 0 else extend(n, 1)
