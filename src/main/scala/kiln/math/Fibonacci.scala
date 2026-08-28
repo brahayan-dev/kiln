@@ -4,7 +4,7 @@ import scala.collection.mutable.ArrayBuffer
 import scala.annotation.tailrec
 
 object Fibonacci:
-  val cache = ArrayBuffer(1, 1)
+  private val cache = ArrayBuffer(1, 1)
 
   @tailrec
   private def extend(n: Int, k: Int): Int =

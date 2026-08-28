@@ -8,7 +8,7 @@ object Permutation:
 
   @tailrec
   private def extend(n: Int, k: Int): Int =
-    if k > n then cache(n)
+    if n < k then cache(n)
     else
       cache.append(cache(k - 1) * k)
       extend(n, k + 1)
