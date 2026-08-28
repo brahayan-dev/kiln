@@ -7,13 +7,12 @@ case class Permutation(n: Int):
 
   private val cache = ArrayBuffer(1, 1)
 
-  private def extend(n: Int, acc: Int): Int =
-    if cache.length < n then
-      val newAcc = acc * n
-      cache.append(newAcc)
-      extend(n - 1, newAcc)
+  private def extend(k: Int): Int =
+    if k > n then
+      cache(n)
     else
-      cache(this.n)
+      cache.append(cache(k - 1) * k)
+      extend(k + 1)
 
   def count: Int =
-    if n <= 1 then cache(n) else extend(n, 1)
+    if n < cache.length then cache(n) else extend(cache.length)
