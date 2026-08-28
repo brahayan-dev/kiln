@@ -3,18 +3,18 @@ package kiln.math
 import scala.collection.mutable.ArrayBuffer
 import scala.annotation.tailrec
 
-case class Permutation(n: Int):
-  require(n >= 0, "`n` should be a positive integer")
-
+object Permutation:
   private val cache = ArrayBuffer(1, 1)
 
   @tailrec
-  private def extend(k: Int): Int =
+  private def extend(n: Int, k: Int): Int =
     if k > n then cache(n)
     else
       cache.append(cache(k - 1) * k)
-      extend(k + 1)
+      extend(n, k + 1)
 
-  def count: Int =
+  def count(n: Int): Int =
+    require(n >= 0, "`n` should be a positive integer")
+
     val k = cache.length
-    if n < k then cache(n) else extend(k)
+    if n < k then cache(n) else extend(n, k)
