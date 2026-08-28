@@ -15,6 +15,4 @@ object Permutation:
 
   def count(n: Int): Int =
     require(n >= 0, "`n` should be a positive integer")
-
-    val k = cache.length
-    if n < k then cache(n) else extend(n, k)
+    extend(n, cache.length)
