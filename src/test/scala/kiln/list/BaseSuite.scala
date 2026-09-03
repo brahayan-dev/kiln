@@ -21,3 +21,8 @@ class BaseSuite extends munit.FunSuite:
     val obtained = Base.hasDuplicates(Seq(1, 3, 2, 3))
     val expected = true
     assertEquals(obtained, expected)
+
+  test("sort returns a sorted sequence"):
+    val obtained = Base.sort(Seq(2, 1, 5, 4, 3))
+    val expected = Seq(1, 2, 3, 4, 5)
+    assertEquals(obtained, expected)

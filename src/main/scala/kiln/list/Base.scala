@@ -6,3 +6,6 @@ object Base:
 
   def hasDuplicates[T](items: Seq[T]): Boolean =
     items.distinct.lengthCompare(items.length) < 0
+
+  def sort(items: Seq[Int]): Seq[Int] =
+    items.sorted
