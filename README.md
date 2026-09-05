@@ -9,16 +9,18 @@ package under `src/test/scala/`.
 ## Run
 
 ```sh
+# run tests
 sbt test
+
+# run formatter
+sbt scalafmtAll
 ```
 
 ## Layout
 
 ```
 src/main/scala/kiln/
-├── list/      stack/    queue/    tree/
-├── heap/      graph/    sorting/  searching/
-├── recursion/ dynamic/  math/     util/
+├── list/ math/
 
 src/test/scala/kiln/   (mirrors the tree above)
 ```
