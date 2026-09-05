@@ -1,4 +1,4 @@
-package kiln.list
+package kiln.seq
 
 object Base:
   def isMember[T](item: T, items: Seq[T]): Boolean =
@@ -9,3 +9,6 @@ object Base:
 
   def sort(items: Seq[Int]): Seq[Int] =
     items.sorted
+
+  def search(items: Seq[Int], item: Int): Int =
+    items.indexWhere(_ == item)

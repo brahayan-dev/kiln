@@ -1,4 +1,4 @@
-package kiln.list
+package kiln.seq
 
 class BaseSuite extends munit.FunSuite:
 
@@ -26,3 +26,9 @@ class BaseSuite extends munit.FunSuite:
     val obtained = Base.sort(Seq(2, 1, 5, 4, 3))
     val expected = Seq(1, 2, 3, 4, 5)
     assertEquals(obtained, expected)
+
+  test(
+    "given a sequence and an element, search returns the element index"
+  ):
+    val obtained = Base.search(Seq(1, 2, 3, 4, 5), 3)
+    assertEquals(obtained, 2)

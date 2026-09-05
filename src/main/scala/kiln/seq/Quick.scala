@@ -1,4 +1,4 @@
-package kiln.list
+package kiln.seq
 
 object Quick:
   def sort(items: Seq[Int]): Seq[Int] =

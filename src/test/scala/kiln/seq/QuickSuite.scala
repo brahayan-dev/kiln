@@ -1,4 +1,4 @@
-package kiln.list
+package kiln.seq
 
 class QuickSuite extends munit.FunSuite:
 
