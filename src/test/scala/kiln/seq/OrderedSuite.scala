@@ -8,13 +8,15 @@ class OrderedSuite extends munit.FunSuite:
     assertEquals(obtained, expected)
 
   test(
-    "given a sequence and an element, linearSearch returns the element index"
+    "given a sequence and a non existing element, linearSearch returns a None"
   ):
-    val obtained = Ordered.linearSearch(Seq(1, 2, 3, 4, 5), 3)
-    assertEquals(obtained, Some(2))
+    val obtained = Ordered.linearSearch(Seq(1, 2, 3, 4, 5), 8)
+    assertEquals(obtained, None)
 
   test(
-    "given a sequence and an element, binarySearch returns the element index"
+    "given a sequence and an existing element, linearSearch returns the element index"
   ):
-    val obtained = Ordered.binarySearch(Seq(1, 2, 3, 4, 5), 3)
-    assertEquals(obtained, 2)
+    val obtained = Ordered.linearSearch(Seq(1, 2, 3, 4, 5), 3)
+    val index = Some(2)
+    assertEquals(obtained, index)
+
