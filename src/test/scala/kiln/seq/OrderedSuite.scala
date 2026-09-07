@@ -19,4 +19,3 @@ class OrderedSuite extends munit.FunSuite:
     val obtained = Ordered.linearSearch(Seq(1, 2, 3, 4, 5), 3)
     val index = Some(2)
     assertEquals(obtained, index)
-

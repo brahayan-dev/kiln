@@ -9,4 +9,3 @@ class LazynessSuite extends munit.FunSuite:
   ):
     val obtained = Lazyness.generateRandom(5)
     assertEquals(obtained.length, 5)
-
