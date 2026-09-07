@@ -4,7 +4,7 @@ object Ordered:
   def linearSearch(items: Seq[Int], item: Int): Option[Int] =
     items.zipWithIndex
       .find(_.head == item)
-      .flatMap(_.last)
+      .map(_.last)
 
   def binarySearch(items: Seq[Int], item: Int): Int =
     100
